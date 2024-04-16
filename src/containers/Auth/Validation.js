@@ -22,8 +22,8 @@ class Validation extends Component {
         const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
         const phonenumber_pattern = /^[0-9]\d{9}$/;
         const fullname_pattern = /^[A-Z][a-zA-Z]{3,}(?: [A-Z][a-zA-Z]*){0,2}$/;
-        const address_pattern = /^[a-zA-Z0-9\s,.'-]{3,}$/;
-        const reason_pattern = /^[a-zA-Z0-9\s,.'-]{5,}$/;
+        const address_pattern = /^.{5,}$/;
+         const reason_pattern = /^.{5,}$/;
 
         // if (values.email === "") {
         //     errors.email = "Email is required";
@@ -49,7 +49,7 @@ class Validation extends Component {
         }
 
         if (!reason_pattern.test(values.reason)) {
-            errors.reason = "Reason must have at least 6 characters"
+            errors.reason = "Reason must have at least 5 characters"
         }
 
         return errors;
