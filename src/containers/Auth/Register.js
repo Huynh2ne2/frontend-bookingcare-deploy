@@ -85,6 +85,8 @@ class Register extends Component {
         } else {
             const validation = new Validation();
             const errors = validation.render(this.state.values);
+            console.log('Huynh check errors ', errors)
+            console.log('Huynh check errors ', Object.keys(errors).length)
             if (Object.keys(errors).length === 1) {
                 this.props.createNewUser({
                     email: this.state.values.email,
